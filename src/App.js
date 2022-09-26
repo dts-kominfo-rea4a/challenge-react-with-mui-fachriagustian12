@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Grid from '@mui/material/Grid';
 
@@ -31,11 +31,13 @@ const App = () => {
 		<div className="App">
 			<Header />
 			<Grid container spacing={2}>
-				<Grid xs={6} sx={{ margin: '6em 0' }}>
+				<Grid item xs={6} sx={{ margin: '6em 0' }}>
 					<ContactForm propsAddContact={addContact} />
 				</Grid>
-				<Grid xs={6} sx={{ margin: '6em 0' }}>
-					<Contact data={contactData} />
+				<Grid item xs={6} sx={{ margin: '6em 0' }}>
+					{contactData.map((contact) => {
+						return <Contact data={contact} />;
+					})}
 				</Grid>
 			</Grid>
 		</div>

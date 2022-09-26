@@ -23,36 +23,30 @@ const Contact = ({ data }) => {
 					bgcolor: 'background.paper',
 				}}
 			>
-				{data.map((contact) => {
-					return (
-						<>
-							<ListItem alignItems="flex-start">
-								<ListItemAvatar sx={{ width: 130 }}>
-									<Avatar
-										alt="Remy Sharp"
-										sx={{ width: 100, height: 100 }}
-										src={contact.photo}
-									/>
-								</ListItemAvatar>
-								<ListItemText
-									sx={{ margin: '1.5em 0' }}
-									primary={contact.name}
-									secondary={
-										<React.Fragment>
-											<Typography variant="body2" color="text.secondary">
-												{contact.phone}
-											</Typography>
-											<Typography variant="body2" color="text.secondary">
-												{contact.email}
-											</Typography>
-										</React.Fragment>
-									}
-								/>
-							</ListItem>
-							<Divider variant="middle" />
-						</>
-					);
-				})}
+				<ListItem alignItems="flex-start">
+					<ListItemAvatar sx={{ width: 130 }}>
+						<Avatar
+							alt="Remy Sharp"
+							sx={{ width: 100, height: 100 }}
+							src={data.photo}
+						/>
+					</ListItemAvatar>
+					<ListItemText
+						sx={{ margin: '1.5em 0' }}
+						primary={data.name}
+						secondary={
+							<React.Fragment>
+								<Typography variant="body2" color="text.secondary">
+									{data.phone}
+								</Typography>
+								<Typography variant="body2" color="text.secondary">
+									{data.email}
+								</Typography>
+							</React.Fragment>
+						}
+					/>
+				</ListItem>
+				<Divider variant="middle" />
 			</List>
 		</>
 	);
