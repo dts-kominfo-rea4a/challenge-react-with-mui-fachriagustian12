@@ -16,44 +16,42 @@ const Contact = ({ data }) => {
 	// Contact berisi foto, nama, telepon, dan email
 	return (
 		<>
-			<div style={{ margin: '0em auto' }}>
-				{data.map((contact) => {
-					return (
-						<List
-							sx={{
-								width: '100%',
-								maxWidth: 700,
-								bgcolor: 'background.paper',
-							}}
-						>
-							<ListItem alignItems="flex-start">
-								<ListItemAvatar sx={{ width: 130 }}>
-									<Avatar
-										alt="Remy Sharp"
-										sx={{ width: 100, height: 100 }}
-										src={contact.photo}
-									/>
-								</ListItemAvatar>
-								<ListItemText
-									sx={{ margin: '1.5em 0' }}
-									primary={contact.name}
-									secondary={
-										<React.Fragment>
-											<Typography variant="body2" color="text.secondary">
-												{contact.phone}
-											</Typography>
-											<Typography variant="body2" color="text.secondary">
-												{contact.email}
-											</Typography>
-										</React.Fragment>
-									}
+			{data.map((contact) => {
+				return (
+					<List
+						sx={{
+							width: '100%',
+							maxWidth: 700,
+							bgcolor: 'background.paper',
+						}}
+					>
+						<ListItem alignItems="flex-start">
+							<ListItemAvatar sx={{ width: 130 }}>
+								<Avatar
+									alt="Remy Sharp"
+									sx={{ width: 100, height: 100 }}
+									src={contact.photo}
 								/>
-							</ListItem>
-							<Divider variant="middle" />
-						</List>
-					);
-				})}
-			</div>
+							</ListItemAvatar>
+							<ListItemText
+								sx={{ margin: '1.5em 0' }}
+								primary={contact.name}
+								secondary={
+									<React.Fragment>
+										<Typography variant="body2" color="text.secondary">
+											{contact.phone}
+										</Typography>
+										<Typography variant="body2" color="text.secondary">
+											{contact.email}
+										</Typography>
+									</React.Fragment>
+								}
+							/>
+						</ListItem>
+						<Divider variant="middle" />
+					</List>
+				);
+			})}
 		</>
 	);
 };
